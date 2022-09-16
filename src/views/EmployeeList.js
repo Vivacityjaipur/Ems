@@ -25,6 +25,7 @@ const EmployeeList = () => {
           <Table className="no-wrap mt-3 align-middle" responsive borderless>
             <thead>
               <tr>
+                <th>S.NO</th>
                 <th>Emp Id</th>
                 <th>Employee</th>
                 <th>Date of Joining</th>
@@ -33,11 +34,13 @@ const EmployeeList = () => {
                 <th>Active</th>
                 <th>Designation</th>
                 <th>Department</th>
+                <th>Role</th>
               </tr>
             </thead>
             <tbody>
               {Employee.map((tdata, index) => (
                 <tr key={index} className="border-top">
+                  <td>{index}</td>
                   <td>{tdata.employee_id}</td>
                   <td>
                     <div className="d-flex align-items-center p-2">
@@ -58,9 +61,10 @@ const EmployeeList = () => {
                       <span className="p-2 bg-danger rounded-circle d-inline-block ms-3"></span>
                     )}
                   </td>
-                  {console.log(tdata)}
+
                   <td>{tdata.designation_id}</td>
                   <td>{tdata.department_id}</td>
+                  <td>{tdata.role_id}</td>
                 </tr>
               ))}
             </tbody>
